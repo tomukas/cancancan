@@ -20,7 +20,7 @@ module CanCan
                             else
                               @rules
                             end
-        StiNormalizer.normalize(@compressed_rules)
+        #StiNormalizer.normalize(@compressed_rules)
         #ConditionsNormalizer.normalize(model_class, @compressed_rules)
       end
 

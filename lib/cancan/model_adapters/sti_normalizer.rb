@@ -48,6 +48,11 @@ module CanCan
 Rails.logger.info "
 
 #{subject}"
+
+Rails.logger.info "
+
+#{rule}"
+
           rules_cache.push(build_rule_for_subclass(rule, subject))
           true
         end

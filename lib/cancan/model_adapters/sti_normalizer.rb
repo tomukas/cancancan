@@ -20,7 +20,7 @@ module CanCan
 
                   ###################
 
-                  #{r.subjects.map{|i| i.class.name }}
+                  #{r.subjects.map{|i| i.name }}
 
                   "
 
@@ -45,7 +45,9 @@ module CanCan
 
         def update_rule(subject, rule, rules_cache)
           return false unless StiDetector.sti_class?(subject)
-Rails.logger.info subject
+Rails.logger.info "
+
+#{subject}"
           rules_cache.push(build_rule_for_subclass(rule, subject))
           true
         end

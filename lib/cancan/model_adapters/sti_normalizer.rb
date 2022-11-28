@@ -9,11 +9,28 @@ module CanCan
         def normalize(rules)
           rules_cache = []
           return unless defined?(ActiveRecord::Base)
-Rails.logger.info "rules #{rules}"
+
           rules.delete_if do |rule|
             subjects = rule.subjects.select do |subject|
-              Rails.logger.info "update rule #{subject} #{rule} #{rules_cache}"
+              Rails.logger.info "update rule #{subject} #{rule}"
               update_rule(subject, rule, rules_cache)
+
+              Rails.logger.info "
+            
+                ##########################
+ 
+                "
+
+                rule.each do |r|
+
+                  Rails.logger.info "
+                  #{r}
+                  "
+
+
+                end
+             
+
             end
             subjects.length == rule.subjects.length
           end

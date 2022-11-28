@@ -12,7 +12,7 @@ module CanCan
 
   
 
-                rules.each do |r|
+                rules.group_by{|s| s.subject }.each do |r|
 
                   Rails.logger.info "
                   #{r.inspect}

@@ -15,13 +15,13 @@ module CanCan
 
       def initialize(model_class, rules)
         super
-        @compressed_rules = if false #CanCan.rules_compressor_enabled
+        @compressed_rules = if CanCan.rules_compressor_enabled
                               RulesCompressor.new(@rules.reverse).rules_collapsed.reverse
                             else
                               @rules
                             end
         StiNormalizer.normalize(@compressed_rules)
-        ConditionsNormalizer.normalize(model_class, @compressed_rules)
+        #ConditionsNormalizer.normalize(model_class, @compressed_rules)
       end
 
       class << self

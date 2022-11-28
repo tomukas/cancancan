@@ -51,7 +51,7 @@ Rails.logger.info "
 
 Rails.logger.info "
 
-#{rule.inspect}"
+#{rule.base_behavior}"
 
           rules_cache.push(build_rule_for_subclass(rule, subject))
           true

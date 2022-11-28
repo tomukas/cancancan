@@ -10,25 +10,6 @@ module CanCan
           rules_cache = []
           return unless defined?(ActiveRecord::Base)
 
-  
-
-                rules.each do |r|
-
-                  Rails.logger.info "
-                  #{r.inspect}
-
-
-                  ###################
-
-                  #{r.subjects.map{|i| i.name }}
-
-                  "
-
-                end
-
-
-
-
 
 
 
@@ -38,6 +19,11 @@ module CanCan
             end
             subjects.length == rule.subjects.length
           end
+
+rules_cache.each { |rule| Rails.logger.info "#{rule.inspect
+
+}" }
+
           rules_cache.each { |rule| rules.push(rule) }
         end
 
@@ -45,13 +31,6 @@ module CanCan
 
         def update_rule(subject, rule, rules_cache)
           return false unless StiDetector.sti_class?(subject)
-Rails.logger.info "
-
-#{subject}"
-
-Rails.logger.info "
-
-#{rule.base_behavior}"
 
           rules_cache.push(build_rule_for_subclass(rule, subject))
           true

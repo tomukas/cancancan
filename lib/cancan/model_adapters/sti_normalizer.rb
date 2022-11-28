@@ -66,7 +66,7 @@ Rails.logger.info "
             else
               rule.conditions.merge(sti_conditions)
             end
-
+Rails.logger.info "#{rule.actions} #{subject.superclass} #{new_rule_conditions}"
           CanCan::Rule.new(rule.base_behavior, rule.actions, subject.superclass,
                            new_rule_conditions, rule.block)
         end

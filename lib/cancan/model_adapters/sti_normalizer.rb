@@ -12,7 +12,7 @@ module CanCan
 
   
 
-                rules.group_by{|s| s.subject }.each do |r|
+                rules.each do |r|
 
                   Rails.logger.info "
                   #{r.inspect}
@@ -20,7 +20,7 @@ module CanCan
 
                   ###################
 
-                  #{r.subjects}
+                  #{r.subjects.map{|i| i.class.name }}
 
                   "
 
@@ -45,7 +45,7 @@ module CanCan
 
         def update_rule(subject, rule, rules_cache)
           return false unless StiDetector.sti_class?(subject)
-
+Rails.logger.info subject
           rules_cache.push(build_rule_for_subclass(rule, subject))
           true
         end

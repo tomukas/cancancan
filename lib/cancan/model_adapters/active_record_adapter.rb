@@ -21,7 +21,7 @@ module CanCan
                               @rules
                             end
         StiNormalizer.normalize(@compressed_rules)
-        ConditionsNormalizer.normalize(model_class, @compressed_rules)
+        #ConditionsNormalizer.normalize(model_class, @compressed_rules)
       end
 
       class << self

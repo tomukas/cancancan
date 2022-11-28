@@ -16,8 +16,7 @@ module CanCan
               update_rule(subject, rule, rules_cache)
 
               Rails.logger.info "
-            
-                ##########################
+
  
                 "
 
@@ -25,6 +24,10 @@ module CanCan
 
                   Rails.logger.info "
                   #{r.inspect}
+
+
+                  ###################
+
                   "
 
 

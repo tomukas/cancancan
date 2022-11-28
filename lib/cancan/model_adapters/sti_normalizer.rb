@@ -20,6 +20,8 @@ module CanCan
 
                   ###################
 
+                  #{r.subjects}
+
                   "
 
                 end

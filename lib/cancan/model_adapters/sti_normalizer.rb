@@ -21,7 +21,7 @@ module CanCan
  
                 "
 
-                rule.each do |r|
+                rules_cache.each do |r|
 
                   Rails.logger.info "
                   #{r}

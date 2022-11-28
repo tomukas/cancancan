@@ -10,10 +10,7 @@ module CanCan
           rules_cache = []
           return unless defined?(ActiveRecord::Base)
 
-    Rails.logger.info "
-
- 
-                "
+  
 
                 rules.each do |r|
 
@@ -25,18 +22,17 @@ module CanCan
 
                   "
 
+                end
+
+
+
+
+
 
 
           rules.delete_if do |rule|
             subjects = rule.subjects.select do |subject|
-              #Rails.logger.info "update rule #{subject} #{rule}"
               update_rule(subject, rule, rules_cache)
-
-          
-
-                end
-             
-
             end
             subjects.length == rule.subjects.length
           end

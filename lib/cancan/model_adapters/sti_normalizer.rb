@@ -25,6 +25,12 @@ rules_cache.each { |rule| Rails.logger.info "#{rule.inspect
 }" }
 
           rules_cache.each { |rule| rules.push(rule) }
+
+rules.each { |rule| Rails.logger.info "#{rule.inspect
+
+}" }
+
+
         end
 
         private
